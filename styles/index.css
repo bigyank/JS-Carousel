@@ -7,4 +7,30 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
+  background-color: #47494e;
+}
+
+.slide-nav {
+  position: absolute;
+  bottom: 0px;
+  left: 165px;
+}
+
+.slide-nav div {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  opacity: 0.6;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slide-nav * + * {
+  margin-left: 25px;
+}
+
+.slide-nav div:hover,
+.slide-nav .active {
+  opacity: 1;
 }

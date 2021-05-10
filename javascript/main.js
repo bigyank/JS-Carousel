@@ -1,31 +1,47 @@
+// slide wraper
 const slidesWraper = document.getElementById("slides-wraper");
 
-// btn
+// nav
+const nav = document.getElementById("nav");
+const navIcons = nav.children;
+
+// get next and prev buttons
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
 
+// get all slide images
 const images = slidesWraper.children;
+
+// number of slide skip
 let counter = 1;
 const imgWidth = images[0].clientWidth;
 
 const transitionSet = "transform 0.6s ease-in-out";
 const transitionUnset = "none";
+
 let slideId;
 
-// first clone
+// close first and last images
 const firstClone = images[0].cloneNode(true);
 const lastClone = images[images.length - 1].cloneNode(true);
 
-// add clones
+// add clones to the slide wraper
 slidesWraper.append(firstClone);
 slidesWraper.prepend(lastClone);
 
-//  reset pic
+//  start slide from second image
 slidesWraper.style.transform = `translateX(${-imgWidth * 1}px)`;
 
 function moveSlide(transition) {
   slidesWraper.style.transition = transition;
   slidesWraper.style.transform = `translateX(${-imgWidth * counter}px)`;
+
+  //    make nav active
+  Array.from(navIcons).map((nav, index) =>
+    index + 1 === counter
+      ? nav.classList.add("active")
+      : nav.classList.remove("active")
+  );
 }
 
 nextBtn.addEventListener("click", () => {
@@ -51,19 +67,19 @@ slidesWraper.addEventListener("transitionend", () => {
   }
 });
 
-slidesWraper.addEventListener("mouseenter", () => {
-  clearInterval(slideId);
-});
+// slidesWraper.addEventListener("mouseenter", () => {
+//   clearInterval(slideId);
+// });
 
-slidesWraper.addEventListener("mouseleave", () => {
-  autoSlide();
-});
+// slidesWraper.addEventListener("mouseleave", () => {
+//   autoSlide();
+// });
 
-function autoSlide() {
-  slideId = setInterval(() => {
-    counter++;
-    moveSlide(transitionSet);
-  }, 2000);
-}
+// function autoSlide() {
+//   slideId = setInterval(() => {
+//     counter++;
+//     moveSlide(transitionSet);
+//   }, 2000);
+// }
 
-autoSlide();
+// autoSlide();
