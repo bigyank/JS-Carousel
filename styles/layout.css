@@ -39,7 +39,9 @@
 .slide-nav {
   position: absolute;
   bottom: 0px;
-  left: 30%;
+  /* left: 30%; */
+  width: 100%;
+  text-align: center;
   /* transform: translate(70%, -50%); */
 }
 
