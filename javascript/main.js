@@ -1,3 +1,6 @@
+// container
+const carouselContainer = document.getElementById("carousel-container");
+
 // slide wraper
 const slidesWraper = document.getElementById("slides-wraper");
 
@@ -67,19 +70,26 @@ slidesWraper.addEventListener("transitionend", () => {
   }
 });
 
-// slidesWraper.addEventListener("mouseenter", () => {
-//   clearInterval(slideId);
-// });
+Array.from(navIcons).forEach((nav, index) => {
+  nav.addEventListener("click", () => {
+    counter = index + 1;
+    moveSlide(transitionSet);
+  });
+});
 
-// slidesWraper.addEventListener("mouseleave", () => {
-//   autoSlide();
-// });
+carouselContainer.addEventListener("mouseenter", () => {
+  clearInterval(slideId);
+});
 
-// function autoSlide() {
-//   slideId = setInterval(() => {
-//     counter++;
-//     moveSlide(transitionSet);
-//   }, 2000);
-// }
+carouselContainer.addEventListener("mouseleave", () => {
+  autoSlide();
+});
 
-// autoSlide();
+function autoSlide() {
+  slideId = setInterval(() => {
+    counter++;
+    moveSlide(transitionSet);
+  }, 2000);
+}
+
+autoSlide();
