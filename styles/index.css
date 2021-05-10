@@ -7,6 +7,33 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #fff;
   background-color: #47494e;
+}
+
+/* side nav btns */
+.slide-btn--left,
+.slide-btn--right {
+  background-color: rgb(0, 0, 0);
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/* side nav icons */
+.slide-btn--left i,
+.slide-btn--right i {
+  font-size: 25px;
+}
+
+/* bottom nav div */
+.slide-nav div {
+  background-color: #fff;
+  opacity: 0.6;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slide-nav div:hover,
+.slide-nav .active {
+  opacity: 1;
 }

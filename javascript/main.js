@@ -59,6 +59,7 @@ prevBtn.addEventListener("click", () => {
   moveSlide(transitionSet);
 });
 
+// when transition at end index move to the first index on background
 slidesWraper.addEventListener("transitionend", () => {
   if (counter === images.length - 1) {
     counter = 1;
@@ -70,6 +71,7 @@ slidesWraper.addEventListener("transitionend", () => {
   }
 });
 
+// add click event on bottom nav indicators
 Array.from(navIcons).forEach((nav, index) => {
   nav.addEventListener("click", () => {
     counter = index + 1;
@@ -77,10 +79,12 @@ Array.from(navIcons).forEach((nav, index) => {
   });
 });
 
+// on mouse over stop auto play
 carouselContainer.addEventListener("mouseenter", () => {
   clearInterval(slideId);
 });
 
+// on mouse exit start autoplay
 carouselContainer.addEventListener("mouseleave", () => {
   autoSlide();
 });
