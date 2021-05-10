@@ -17,12 +17,12 @@ const images = slidesWraper.children;
 
 // number of slide skip
 let counter = 1;
+let slideId;
+
 const imgWidth = images[0].clientWidth;
 
 const transitionSet = "transform 0.6s ease-in-out";
 const transitionUnset = "none";
-
-let slideId;
 
 // close first and last images
 const firstClone = images[0].cloneNode(true);
