@@ -1,0 +1,10 @@
+@import url(reset.css);
+@import url(layout.css);
+
+body {
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
