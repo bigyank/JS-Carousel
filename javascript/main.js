@@ -10,6 +10,7 @@ const imgWidth = images[0].clientWidth;
 
 const transitionSet = "transform 0.6s ease-in-out";
 const transitionUnset = "none";
+let slideId;
 
 // first clone
 const firstClone = images[0].cloneNode(true);
@@ -49,3 +50,20 @@ slidesWraper.addEventListener("transitionend", () => {
     moveSlide(transitionUnset);
   }
 });
+
+slidesWraper.addEventListener("mouseenter", () => {
+  clearInterval(slideId);
+});
+
+slidesWraper.addEventListener("mouseleave", () => {
+  autoSlide();
+});
+
+function autoSlide() {
+  slideId = setInterval(() => {
+    counter++;
+    moveSlide(transitionSet);
+  }, 2000);
+}
+
+autoSlide();
