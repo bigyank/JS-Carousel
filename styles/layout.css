@@ -39,13 +39,11 @@
 .slide-nav {
   position: absolute;
   bottom: 0px;
-  /* left: 30%; */
   width: 100%;
   text-align: center;
-  /* transform: translate(70%, -50%); */
 }
 
-.slide-nav div {
+.slide-nav .dot {
   display: inline-block;
   width: 15px;
   height: 15px;
@@ -56,7 +54,7 @@
   margin-left: 25px;
 }
 
-.slide-nav div:hover,
+.slide-nav .dot:hover,
 .slide-nav .active {
   opacity: 1;
 }

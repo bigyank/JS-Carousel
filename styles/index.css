@@ -26,14 +26,14 @@ body {
 }
 
 /* bottom nav div */
-.slide-nav div {
+.slide-nav .dot {
   background-color: #fff;
   opacity: 0.6;
   cursor: pointer;
   border-radius: 50%;
 }
 
-.slide-nav div:hover,
+.slide-nav .dot:hover,
 .slide-nav .active {
   opacity: 1;
 }

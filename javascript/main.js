@@ -5,8 +5,11 @@ const carouselContainer = document.getElementById("carousel-container");
 const slidesWraper = document.getElementById("slides-wraper");
 
 // nav
-const nav = document.getElementById("nav");
-const navIcons = nav.children;
+const slideNav = document.createElement("div");
+slideNav.classList.add("slide-nav");
+slideNav.setAttribute("id", "nav");
+
+carouselContainer.appendChild(slideNav);
 
 // get next and prev buttons
 const nextBtn = document.getElementById("nextBtn");
@@ -40,7 +43,7 @@ function moveSlide(transition) {
   slidesWraper.style.transform = `translateX(${-imgWidth * counter}px)`;
 
   //    make nav active
-  Array.from(navIcons).map((nav, index) =>
+  Array.from(slideNav.children).map((nav, index) =>
     index + 1 === counter
       ? nav.classList.add("active")
       : nav.classList.remove("active")
@@ -71,14 +74,6 @@ slidesWraper.addEventListener("transitionend", () => {
   }
 });
 
-// add click event on bottom nav indicators
-Array.from(navIcons).forEach((nav, index) => {
-  nav.addEventListener("click", () => {
-    counter = index + 1;
-    moveSlide(transitionSet);
-  });
-});
-
 // on mouse over stop auto play
 carouselContainer.addEventListener("mouseenter", () => {
   clearInterval(slideId);
@@ -95,5 +90,22 @@ function autoSlide() {
     moveSlide(transitionSet);
   }, 2000);
 }
+
+//  create bottom nav
+Array.from(images).map((_images, index, array) => {
+  if (index === 0 || index === array.length - 1) return;
+  const navDot = document.createElement("div");
+  navDot.classList.add("dot");
+
+  //  make first dot active
+  if (index === 1) navDot.classList.add("active");
+
+  navDot.addEventListener("click", () => {
+    counter = index;
+    moveSlide(transitionSet);
+  });
+
+  slideNav.appendChild(navDot);
+});
 
 autoSlide();
