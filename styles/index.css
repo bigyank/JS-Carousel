@@ -19,6 +19,11 @@ body {
   cursor: pointer;
 }
 
+.slide-btn--left:hover,
+.slide-btn--right:hover {
+  background-color: rgb(49, 47, 47);
+}
+
 /* bottom nav div */
 .slide-nav .dot {
   background-color: #fff;
