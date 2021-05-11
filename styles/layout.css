@@ -33,7 +33,7 @@
 .slide-btn--right img {
   transform: translate(50%, -50%);
   position: absolute;
-  top: 300px;
+  top: 50%;
 }
 
 .slide-nav {
