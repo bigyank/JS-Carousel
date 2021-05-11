@@ -2,11 +2,6 @@
   .slide-nav * + * {
     margin-left: 35px;
   }
-
-  .slide-btn--left i,
-  .slide-btn--right i {
-    transform: translate(85%, -50%);
-  }
 }
 
 @media (min-width: 769px) {

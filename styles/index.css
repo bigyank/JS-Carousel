@@ -19,12 +19,6 @@ body {
   cursor: pointer;
 }
 
-/* side nav icons */
-.slide-btn--left i,
-.slide-btn--right i {
-  font-size: 25px;
-}
-
 /* bottom nav div */
 .slide-nav .dot {
   background-color: #fff;

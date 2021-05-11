@@ -29,9 +29,9 @@
   right: 0px;
 }
 
-.slide-btn--left i,
-.slide-btn--right i {
-  transform: translate(65%, -50%);
+.slide-btn--left img,
+.slide-btn--right img {
+  transform: translate(50%, -50%);
   position: absolute;
   top: 300px;
 }
